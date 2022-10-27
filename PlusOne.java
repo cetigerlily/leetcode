@@ -1,22 +1,24 @@
 class Solution {
     public int[] plusOne(int[] digits) {
-        long originalNumber = 0;
-        int exponent = 0;
-
         for(int i = digits.length - 1; i >= 0; i--) {
-            originalNumber += digits[i] * Math.pow(10, exponent);
-            exponent += 1;
+            if(digits[i] != 9) {
+                digits[i] += 1;
+                break;
+            } else {
+                digits[i] = 0;
+            }
         }
 
-        long newNumber = originalNumber + 1;
-        int length = String.valueOf(newNumber).length();
-        int[] answer = new int[length];
-
-        for(int i = length - 1; i >= 0; i--) {
-            long value = newNumber % 10;
-            newNumber = (newNumber - value) / 10;
-            answer[i] = (int) value;
+        int[] answer = new int[digits.length + 1];
+        if(digits[0] == 0) {
+            answer[0] = 1;
+            for(int i = 1; i < answer.length; i++) {
+                answer[i] = 0;
+            }
+            return answer;
+        } else {
+            return digits;
+    
         }
-        return answer;
     }
 }
