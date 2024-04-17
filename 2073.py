@@ -5,7 +5,6 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-
         time_before = 0
         for i in range(0, k):
             time_before += min(tickets[i], tickets[k])
