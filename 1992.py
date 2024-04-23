@@ -56,16 +56,3 @@ class Solution(object):
                         group = bfs((i, j))
                         groups.append(group)
         return groups
-
-
-def main():
-    # land = [[1, 0, 0], [0, 1, 1], [0, 1, 1]]
-    # land = [[1, 1], [1, 1]]
-    # land = [[0]]
-    land = [[1]]
-
-    print(Solution().findFarmland(land))
-
-
-if __name__ == '__main__':
-    main()
